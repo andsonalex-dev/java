@@ -2,7 +2,6 @@ package aplication;
 
 import java.util.Locale;
 import java.util.Scanner;
-
 import entities.Product;
 
 public class Program {
@@ -11,21 +10,19 @@ public class Program {
 		// TODO Auto-generated method stub
 		
 		Locale.setDefault(Locale.US);
-		Scanner sc = new Scanner(System.in);
-			
-		Product product = new Product();
+		Scanner sc = new Scanner(System.in);		
+		
 		
 		System.out.println("Enter prodcut data: ");
 		System.out.println("Name: ");
-		product.name = sc.nextLine();
+		String name = sc.nextLine();
 		System.out.println("Price: ");
-		product.price = sc.nextDouble();
+		double price = sc.nextDouble();
 		System.out.println("Quantity in stock: ");
-		product.quantity = sc.nextInt();
+		int quantity = sc.nextInt();
 		
-		
-		System.out.println("Product Data: "+ product);
-		
+		Product product = new Product(name, price, quantity);
+		System.out.println("Product Data: "+ product);		
 		System.out.println();
 		System.out.println("Enter the number of products to be added in stock: ");
 		int newQuantity = sc.nextInt();
